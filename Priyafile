@@ -1,13 +1,17 @@
-    pipeline{
-        agent {
-            label 'headche-label'
-        }
-        stages {
-            stage('Build') {
-                steps {
-                    echo "This will print the execute timeout"
+   pipeline {
+    agent {
+        label 'headche-label'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                //it will wait for only 5 seconds to execute the code
+                timeout(time:5,unit: 'SECONDS') {
+                    echo "***Sleeping for 60 seconds"
                     sleep 60
+                    //my code will take 60 seconds to execute
                 }
             }
         }
     }
+}
