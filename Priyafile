@@ -1,0 +1,13 @@
+    pipeline{
+        agent {
+            label 'headche-label'
+        }
+        stages {
+            stage('Build') {
+                steps {
+                    echo "This will print the execute timeout"
+                    sleep 60
+                }
+            }
+        }
+    }
